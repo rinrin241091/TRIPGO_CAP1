@@ -101,28 +101,45 @@ function AuthForm({ type, onSubmit, onClose }) {
   };
 
   // Xử lý khi form hoàn tất được gửi
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let passwordError = '';
     let confirmPasswordError = '';
-
+  
     // Kiểm tra mật khẩu theo tiêu chuẩn hiện nay
     if (!validatePassword(password)) {
       passwordError = 'Mật khẩu phải có ít nhất 8 ký tự, bao gồm ít nhất một chữ hoa, một chữ thường, một chữ số và một ký tự đặc biệt.';
     }
-
+  
     // Kiểm tra mật khẩu xác nhận khớp với mật khẩu
     if (password !== confirmPassword) {
       confirmPasswordError = 'Mật khẩu xác nhận không khớp!';
     }
-
+  
     if (passwordError || confirmPasswordError) {
       setErrors({ password: passwordError, confirmPassword: confirmPasswordError });
     } else {
-      // Gọi hàm onSubmit và truyền dữ liệu khi không có lỗi
-      onSubmit({ emailOrPhone, fullName, password });
+      try {
+        // Gửi dữ liệu đăng ký đến backend
+        const response = await axios.post('http://localhost:3000/users', {
+          fullName,
+          emailOrPhone,
+          password,
+        });
+  
+        // Xử lý phản hồi từ backend nếu đăng ký thành công
+        console.log('Đăng ký thành công:', response.data);
+        onSubmit({ emailOrPhone, fullName, password });
+  
+        // Chuyển hướng người dùng sau khi đăng ký thành công
+        window.location.href = '/home';
+      } catch (error) {
+        console.error('Lỗi khi đăng ký:', error.response ? error.response.data : error.message);
+        setErrors({ password: 'Có lỗi xảy ra khi đăng ký. Vui lòng thử lại.' });
+      }
     }
   };
+  
 
   // Khi người dùng bắt đầu nhập, xóa lỗi tương ứng
   const handleInputChange = (setter, field) => (e) => {

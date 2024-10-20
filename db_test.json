@@ -1,17 +1,22 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "testuser",
-        "email": "testuser@example.com",
-        "password": "Test1234!"
-      },
-      {
-        "id": 2,
-        "username": "johndoe",
-        "email": "johndoe@example.com",
-        "password": "Password123!"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": "1",
+      "username": "testuser",
+      "email": "testuser@example.com",
+      "password": "Test1234!"
+    },
+    {
+      "id": "2",
+      "username": "johndoe",
+      "email": "johndoe@example.com",
+      "password": "Password123!"
+    },
+    {
+      "id": "fbab",
+      "fullName": "TVT",
+      "emailOrPhone": "0931951269",
+      "password": "Thangtran00030@"
+    }
+  ]
+}
