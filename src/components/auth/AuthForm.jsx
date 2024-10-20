@@ -56,8 +56,8 @@ function AuthForm({ type, onSubmit, onClose }) {
   
     try {
       // Gửi yêu cầu đến API để kiểm tra thông tin đăng nhập
-      const response = await axios.get('http://localhost:5000/users');
-      const users = response.data; 
+      const response = await axios.get('http://localhost:3000/users');
+      const users = response.data;
   
       // Kiểm tra thông tin người dùng
       const user = users.find(user =>
@@ -68,14 +68,18 @@ function AuthForm({ type, onSubmit, onClose }) {
         passwordError = 'Thông tin đăng nhập không đúng!';
         setErrors({ password: passwordError });
       } else {
-        // Nếu thông tin hợp lệ, chuyển đến trang chủ
-        window.location.href = '/home'; // Chuyển sang trang chủ
+        // Lưu thông tin người dùng vào localStorage
+        localStorage.setItem('user', JSON.stringify(user));
+        
+        // Truyền dữ liệu cho `onSubmit` để cập nhật giao diện trong `Header`
+        onSubmit(user);
       }
     } catch (error) {
       console.error("Lỗi khi lấy dữ liệu người dùng:", error.response ? error.response.data : error.message);
       setErrors({ password: 'Có lỗi xảy ra trong quá trình đăng nhập. Vui lòng thử lại.' });
     }
   };
+  
   
   // Xử lý khi form đăng ký được gửi
   const handleContinue = (e) => {
