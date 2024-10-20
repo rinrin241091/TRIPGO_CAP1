@@ -6,11 +6,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AuthForm from '../components/auth/AuthForm'; 
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Header = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false); // Toggle login form
   const [isRegisterOpen, setIsRegisterOpen] = useState(false); // Toggle register form
   const [loggedInUser, setLoggedInUser] = useState(null); // State để lưu thông tin người dùng
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State để quản lý trạng thái dropdown
+  const navigate = useNavigate(); // Sử dụng hook useNavigate để điều hướng
 
   // Khi component mount, kiểm tra xem người dùng đã đăng nhập chưa (lấy từ localStorage)
   useEffect(() => {
@@ -39,8 +42,14 @@ const Header = () => {
     handleClose(); // Đóng form đăng nhập
   };
 
+  // Xử lý khi click vào "Thông tin cá nhân"
+  const handleShowProfile = () => {
+    setIsDropdownOpen(false); // Đóng dropdown
+    navigate('/profile'); // Điều hướng đến trang UserProfile
+  };
+
   return (
-    <header className=" px-[10%] fixed top-0 left-0 right-0 z-50 p-4  flex justify-between items-center h-[80px] bg-white">
+    <header className=" px-[10%] fixed top-0 left-0 right-0 z-50 p-4 flex justify-between items-center h-[80px] bg-white">
       <div className="flex items-center space-x-4 ">
         <img src="logo.png" alt="Logo" />
 
@@ -75,15 +84,29 @@ const Header = () => {
         
         {/* Hiển thị avatar hoặc nút đăng nhập/đăng ký */}
         {loggedInUser ? (
-          <div className="flex items-center space-x-2">
-            <FontAwesomeIcon icon={faUserCircle} className="text-gray-600" style={{ fontSize: '32px' }} />
-            <span className="text-gray-600">{loggedInUser.username}</span>
-            <button
-              className="px-4 py-2 font-medium rounded-lg text-white hover:bg-red-700 bg-red-500"
-              onClick={handleLogout}
-            >
-              Đăng Xuất
-            </button>
+          <div className="relative flex items-center space-x-2">
+            {/* Thay đổi từ hover sang click */}
+            <div className="cursor-pointer" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+              <FontAwesomeIcon icon={faUserCircle} className="text-gray-600" style={{ fontSize: '36px' }} />
+   
+            </div>
+
+            {/* Dropdown xuất hiện khi click */}
+            {isDropdownOpen && (
+              <div className="absolute right-0 top-12 w-48 bg-white border rounded-lg shadow-lg z-10">
+                <ul className="py-2">
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={handleShowProfile}>
+                    Thông tin cá nhân
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-100">
+                    <a href="#">Ưa thích</a>
+                  </li>
+                  <li className="px-4 py-2 hover:bg-red-100 text-red-600 cursor-pointer" onClick={handleLogout}>
+                    Đăng Xuất
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         ) : (
           <>
