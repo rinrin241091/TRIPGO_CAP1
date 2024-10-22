@@ -55,30 +55,30 @@ function AuthForm({ type, onSubmit, onClose }) {
     }
   
     try {
-      // Gửi yêu cầu đến API để kiểm tra thông tin đăng nhập
-      const response = await axios.get('http://localhost:3000/users');
-      const users = response.data;
+      // Gửi yêu cầu POST đến API đăng nhập
+      const response = await axios.post('http://localhost:3000/api/login', {
+        emailOrPhone,
+        password,
+      });
   
-      // Kiểm tra thông tin người dùng
-      const user = users.find(user =>
-        (user.email === emailOrPhone || user.username === emailOrPhone) && user.password === password
-      );
+      // Kiểm tra phản hồi từ API
+      if (response.data.success) {
+        const user = response.data.user;
   
-      if (!user) {
-        passwordError = 'Thông tin đăng nhập không đúng!';
-        setErrors({ password: passwordError });
-      } else {
         // Lưu thông tin người dùng vào localStorage
         localStorage.setItem('user', JSON.stringify(user));
-        
+  
         // Truyền dữ liệu cho `onSubmit` để cập nhật giao diện trong `Header`
         onSubmit(user);
+      } else {
+        setErrors({ password: response.data.message });
       }
     } catch (error) {
-      console.error("Lỗi khi lấy dữ liệu người dùng:", error.response ? error.response.data : error.message);
+      console.error("Lỗi khi xử lý đăng nhập:", error.response ? error.response.data : error.message);
       setErrors({ password: 'Có lỗi xảy ra trong quá trình đăng nhập. Vui lòng thử lại.' });
     }
   };
+  
   
   
   // Xử lý khi form đăng ký được gửi
@@ -121,7 +121,7 @@ function AuthForm({ type, onSubmit, onClose }) {
     } else {
       try {
         // Gửi dữ liệu đăng ký đến backend
-        const response = await axios.post('http://localhost:3000/users', {
+        const response = await axios.post('http://localhost:3000/api/register', {
           fullName,
           emailOrPhone,
           password,
@@ -132,7 +132,7 @@ function AuthForm({ type, onSubmit, onClose }) {
         onSubmit({ emailOrPhone, fullName, password });
   
         // Chuyển hướng người dùng sau khi đăng ký thành công
-        window.location.href = '/home';
+        window.location.href = '/';
       } catch (error) {
         console.error('Lỗi khi đăng ký:', error.response ? error.response.data : error.message);
         setErrors({ password: 'Có lỗi xảy ra khi đăng ký. Vui lòng thử lại.' });

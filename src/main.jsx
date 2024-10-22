@@ -6,18 +6,23 @@ import '@fontsource/roboto/700.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
-import HomePage from './Page/HomePage'; 
-import HotelPage from './Page/Hotel'; 
-import UserProfile from './Page/UserProfile'; 
-import '../src/index.css'
+import Restaurant from './Page/Restaurant'; // Import Restaurant Page
+import HomePage from './Page/HomePage'; // Import Home Page
+import HotelPage from './Page/Hotel'; // Import Hotel Page
+import UserProfile from './Page/UserProfile'; // Import User Profile Page
+import TourPage from './Page/TourPage';
+import '../src/index.css'; 
+
 
 const Main = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HotelPage />} /> 
-        <Route path="/hotels" element={<HotelPage />} />  {/* Trang khách sạn */}
-        <Route path="/profile" element={<UserProfile />} />  {/* Trang thông tin cá nhân */}
+        <Route path="/" element={<HomePage />} /> {/* Home Page */}
+        <Route path="/hotels" element={<HotelPage />} /> {/* Hotel Page */}
+        <Route path="/restaurants" element={<Restaurant />} /> {/* Restaurant Page */}
+        <Route path="/profile" element={<UserProfile />} /> {/* User Profile Page */}
+        <Route path="/tours" element={<TourPage />} /> {/* User Profile Page */}
       </Routes>
     </Router>
   );

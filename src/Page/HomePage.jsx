@@ -1,6 +1,6 @@
 import Header from "../layout/Header";
 import Navbar from "../layout/Navbar";
-// import Footer from "../layout/Footer";
+import Footer from "../layout/Footer";
 import SpecialOffer from "../components/SpecialOffer";
 import TravelSection from "../components/TravelSection";
 import DestinationSuggestions from "../components/DestinationSuggestions ";
@@ -17,6 +17,7 @@ const HomePage = () => {
       <TravelSection />
       <DestinationSuggestions />
       <TestimonialCard />
+      <Footer />
     </div>
   );
 };
