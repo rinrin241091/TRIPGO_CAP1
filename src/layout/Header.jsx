@@ -57,7 +57,7 @@ const Header = () => {
     <header className=" px-[10%] fixed top-0 left-0 right-0 z-50 p-4 flex justify-between items-center h-[80px] bg-white">
       <div className="flex items-center space-x-4 ">
         <img
-          src="logo.png"
+          src="public/logo.png"
           alt="Logo"
           className="cursor-pointer"
           onClick={handleLogoClick} // Add onClick event to navigate to home

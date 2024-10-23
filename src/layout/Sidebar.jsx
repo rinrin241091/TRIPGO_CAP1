@@ -18,7 +18,7 @@ const Sidebar = () => {
           className="flex flex-col items-center space-y-1 text-gray-600 hover:text-blue-800"
           onClick={() => navigate("/hotels")} // Navigate to hotels page
         >
-          <span>
+         <span className=" flex gap-2 items-center">
             <FontAwesomeIcon icon={faHotel} />
             Khách sạn
           </span>
@@ -27,16 +27,16 @@ const Sidebar = () => {
           className="flex flex-col items-center space-y-1 text-gray-600 hover:text-blue-800"
           onClick={() => navigate("/restaurants")} // Navigate to restaurants page
         >
-          <span>
+           <span className=" flex gap-2 items-center">
             <FontAwesomeIcon icon={faUtensils} />
             Nhà hàng
           </span>
         </button>
         <button
           className="flex flex-col items-center space-y-1 text-gray-600 hover:text-blue-800"
-          onClick={() => navigate("/activities")} // Navigate to activities page
+          onClick={() => navigate("/funactivities")} // Navigate to activities page
         >
-          <span>
+         <span className=" flex gap-2 items-center">
             <FontAwesomeIcon icon={faFaceSurprise} />
             Hoạt động & Vui chơi
           </span>
@@ -45,7 +45,7 @@ const Sidebar = () => {
           className="flex flex-col items-center space-y-1 text-gray-600 hover:text-blue-800"
           onClick={() => navigate("/tours")} // Navigate to tours page
         >
-          <span>
+        <span className=" flex gap-2 items-center">
             <FontAwesomeIcon icon={faClosedCaptioning} />
             Tours
           </span>
@@ -54,7 +54,7 @@ const Sidebar = () => {
           className="flex flex-col items-center space-y-1 text-gray-600 hover:text-blue-800"
           onClick={() => navigate("/explore-more")} // Navigate to explore more page
         >
-          <span>
+         <span className=" flex gap-2 items-center">
             <FontAwesomeIcon icon={faMendeley} />
             Khám phá thêm
           </span>

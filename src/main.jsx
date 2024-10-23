@@ -11,6 +11,8 @@ import HomePage from './Page/HomePage'; // Import Home Page
 import HotelPage from './Page/Hotel'; // Import Hotel Page
 import UserProfile from './Page/UserProfile'; // Import User Profile Page
 import TourPage from './Page/TourPage';
+import FunActivitiesPage from './Page/FunActivitiesPage';
+import HotelDetails from './Page/HotelDetail';
 import '../src/index.css'; 
 
 
@@ -18,11 +20,13 @@ const Main = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} /> {/* Home Page */}
-        <Route path="/hotels" element={<HotelPage />} /> {/* Hotel Page */}
-        <Route path="/restaurants" element={<Restaurant />} /> {/* Restaurant Page */}
-        <Route path="/profile" element={<UserProfile />} /> {/* User Profile Page */}
-        <Route path="/tours" element={<TourPage />} /> {/* User Profile Page */}
+        <Route path="/" element={<HomePage />} /> 
+        <Route path="/hotels" element={<HotelPage />} /> 
+        <Route path="/hoteldetails" element={<HotelDetails />} /> 
+        <Route path="/restaurants" element={<Restaurant />} /> 
+        <Route path="/profile" element={<UserProfile />} /> 
+        <Route path="/tours" element={<TourPage />} />
+        <Route path="/funactivities" element={<FunActivitiesPage />} /> 
       </Routes>
     </Router>
   );
