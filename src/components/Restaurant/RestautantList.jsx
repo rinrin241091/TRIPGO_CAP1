@@ -147,7 +147,7 @@ const RestautantList = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-10">
+    <div className="flex flex-wrap justify-between">
       {currentRestaurant.map((restaurant, index) => (
         <RestaurantCard key={index} restaurant={restaurant} />
       ))}

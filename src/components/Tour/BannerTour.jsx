@@ -28,25 +28,21 @@ const BannerTour = () => {
         <div className="absolute inset-0 bg-black bg-opacity-10"></div>
 
         {/* Nội dung */}
-        <div className=" mt-[80px] relative z-10 flex flex-col text-white pt-10 ml-[100px] ">
+        <div className="mt-[80px] relative z-10 flex flex-col text-white pt-10">
+          <div className="ml-32">
+
           <h1 className="text-5xl font-bold mt-28">TOURS</h1>
           <p className="text-lg mt-5">"Một vé cho hành trình không hồi kết"</p>
+          </div>
 
           {/* Địa điểm và Ngày đi */}
-          <div className=" ml-12 W-full flex justify-center">
-
-          <div className="absolute  pt-2 flex space-x-2 w-full  top-[250px] mt-[65px] mx-auto">
-            <div className="bg-slate-200 w-[1187px] h-[120px] flex justify-center items-center rounded-xl">
+          <div className="flex justify-center mt-[65px]">
+            <div className="bg-slate-200 w-4/5 h-[120px] flex justify-center items-center rounded-xl">
               {/* Điểm đến */}
               <div className="flex flex-col mx-2">
-                <div className="text-sm text-slate-600 font-medium">
-                  Điểm đến
-                </div>
+                <div className="text-sm text-slate-600 font-medium">Điểm đến</div>
                 <div className="px-6 bg-white rounded-xl text-customBlue font-medium flex justify-between items-center w-[500px] h-[64px]">
-                  <Icon
-                    icon="mdi:location"
-                    className="w-7 h-7 text-slate-500 "
-                  />
+                  <Icon icon="mdi:location" className="w-7 h-7 text-slate-500" />
                   <select className="px-2 w-full text-black">
                     <option>Chọn điểm đến</option>
                     <option>Đà Nẵng</option>
@@ -58,14 +54,9 @@ const BannerTour = () => {
 
               {/* Chọn ngày */}
               <div className="flex flex-col mx-2">
-                <div className="text-sm text-slate-600 font-medium">
-                  Chọn ngày
-                </div>
-                <div className="px-6 bg-white rounded-xl text-customBlue font-medium flex items-center w-[500px] h-[64px]">
-                  <Icon
-                    icon="mdi:calendar"
-                    className="w-7 h-7 text-slate-500 mr-2"
-                  />
+                <div className="text-sm text-slate-600 font-medium">Chọn ngày</div>
+                <div className="px-6 bg-white rounded-xl text-customBlue font-medium flex items-center w-[450px] h-[64px]">
+                  <Icon icon="mdi:calendar" className="w-7 h-7 text-slate-500 mr-2" />
                   <DatePicker
                     selected={checkInDate}
                     onChange={(date) => {
@@ -81,12 +72,11 @@ const BannerTour = () => {
                     minDate={new Date()} // Không cho phép chọn ngày quá khứ
                   />
                 </div>
-          </div>
+              </div>
+
               <button className="mt-5 w-36 h-16 rounded-xl bg-customBlue text-white font-semibold flex justify-center items-center bg-blue-900 hover:bg-blue-700 duration-300">
                 Tìm kiếm
               </button>
-              </div>
-
             </div>
           </div>
         </div>

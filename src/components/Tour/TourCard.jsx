@@ -5,7 +5,7 @@ import starIcon from "@iconify/icons-mdi/star"; // Biểu tượng sao
 import IconHeart from "../icon/IconHeart";
 const TourCard = ({ tour }) => {
   return (
-    <div className="w-[270px]  rounded-xl overflow-hidden shadow-lg bg-white">
+    <div className="w-[260px] mt-4 rounded-xl overflow-hidden shadow-lg bg-white">
       {/* Hình ảnh nhà hàng */}
       <div className="relative">
         <img
@@ -26,7 +26,7 @@ const TourCard = ({ tour }) => {
           </div>
           <p className="ml-5 text-slate-500">{tour.nub_day} ngày</p>
         </div>
-        <h2 className="text-2xl font-bold text-blue-900 mt-3">{tour.name}</h2>
+        <h2 className="text-xl font-bold text-blue-900 mt-3">{tour.name}</h2>
         <div className="text-sm flex mt-3">
           <Icon
             icon={locationIcon}
