@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 
 const RestaurantCard = ({ restaurant }) => {
   return (
-    <div className="max-w-sm rounded-xl overflow-hidden shadow-lg bg-white w-[310px] h-[410px] ">
+    <div className="max-w-sm rounded-xl overflow-hidden shadow-lg bg-white w-[270px] h-[360px] ">
       {/* Hình ảnh nhà hàng */}
       <div className="relative">
         <img
