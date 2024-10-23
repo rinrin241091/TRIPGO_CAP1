@@ -17,7 +17,7 @@ const SpecialOffer = () => {
   return (
     <div className="flex flex-col items-center py-8 bg-gray-50 mt-[100px]">
       {/* Tiêu đề */}
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">Ưu đãi đặc biệt</h1>
+      <h1 className="text-4xl font-bold text-gray-800 mb-4">Ưu đãi đặc biệt</h1>
 
       {/* Tabs lựa chọn */}
       <div className="flex space-x-4 mb-8 border border-blue-200 rounded-md">

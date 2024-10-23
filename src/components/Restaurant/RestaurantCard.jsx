@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Icon } from "@iconify/react";
+import IconHeart from "../icon/IconHeart";
 
 const RestaurantCard = ({ restaurant }) => {
   return (
-    <div className="max-w-sm rounded-xl overflow-hidden shadow-lg bg-white w-[270px] h-[360px] ">
+    <div className="w-[270px]  rounded-xl overflow-hidden shadow-lg bg-white">
       {/* Hình ảnh nhà hàng */}
       <div className="relative">
         <img
@@ -11,8 +12,8 @@ const RestaurantCard = ({ restaurant }) => {
           src={restaurant.imageUrl}
           alt={restaurant.name}
         />
-        <button className="absolute top-2 right-2 p-2 rounded-full bg-white text-blue-500">
-          <Icon icon="mdi:heart-outline" />
+        <button className="absolute top-2 right-2 p-2 ">
+          <IconHeart />
         </button>
       </div>
 
@@ -65,7 +66,7 @@ const RestaurantCard = ({ restaurant }) => {
           />
           <p className="text-green-500 ml-1">{restaurant.status}</p>
         </div>
-        <button className="h-[43px] w-[110px] bg-blue-900 text-white rounded-2xl hover:bg-blue-700 ml-[145px]">
+        <button className="h-[43px] w-[110px] bg-blue-900 text-white rounded-2xl hover:bg-blue-700 ml-[125px]">
           Xem chi tiết
         </button>
       </div>

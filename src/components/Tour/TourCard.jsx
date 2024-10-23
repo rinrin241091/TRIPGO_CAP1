@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import locationIcon from "@iconify/icons-mdi/map-marker"; // Biểu tượng vị trí
 import starIcon from "@iconify/icons-mdi/star"; // Biểu tượng sao
-
+import IconHeart from "../icon/IconHeart";
 const TourCard = ({ tour }) => {
   return (
     <div className="w-[270px]  rounded-xl overflow-hidden shadow-lg bg-white">
@@ -13,8 +13,8 @@ const TourCard = ({ tour }) => {
           src={tour.imageUrl}
           alt="hoi an"
         />
-        <button className="absolute top-2 right-2 p-2 rounded-full bg-white text-blue-500">
-          <Icon icon="mdi:heart-outline" />
+        <button className="absolute top-2 right-2 p-2 ">
+          <IconHeart/>
         </button>
       </div>
 

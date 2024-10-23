@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Icon } from "@iconify/react";
 import starIcon from "@iconify/icons-mdi/star"; // Biểu tượng sao
+import IconHeart from "../icon/IconHeart";
 
 const FunActivitiesCard = ({ activity }) => {
   return (
@@ -12,8 +13,8 @@ const FunActivitiesCard = ({ activity }) => {
           src={activity.imageUrl}
           alt={activity.name}
         />
-        <button className="absolute top-2 right-2 p-2 rounded-full bg-white text-blue-500">
-          <Icon icon="mdi:heart-outline" />
+        <button className="absolute top-2 right-2 p-2 ">
+          <IconHeart />
         </button>
       </div>
 

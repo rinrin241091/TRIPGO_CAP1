@@ -4,6 +4,7 @@ import {
   faMagnifyingGlass,
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import { Icon } from '@iconify/react/dist/iconify.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AuthForm from '../components/auth/AuthForm'; 
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
@@ -67,8 +68,8 @@ const Header = () => {
         <div className="relative">
           <input
             type="text"
-            placeholder="Tìm kiếm điểm đến"
-            className="bg-blue-100 px-4 py-2 pl-10 pr-4 rounded-full border border-slate-400 focus:outline-none focus:border-blue-500"
+            placeholder="Tìm kiếm tất cả"
+            className="bg-[#f7f7f7] w-[367px] px-4 py-2 pl-10 pr-4 rounded-full border border-slate-400 focus:outline-none focus:border-blue-500"
           />
           {/* Search Icon */}
           <FontAwesomeIcon
@@ -79,7 +80,8 @@ const Header = () => {
       </div>
 
       <nav className="flex items-center space-x-4">
-        <a href="#" className="text-gray-600 hover:text-gray-800 font-medium">
+        <a href="#" className="text-gray-600 hover:text-gray-800 font-medium flex items-center gap-2">
+        {<Icon icon="twemoji:flag-vietnam" className='text-2xl' />}
           VN|VND
         </a>
         <FontAwesomeIcon icon={faChevronDown} />
