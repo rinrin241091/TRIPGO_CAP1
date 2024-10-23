@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Icon } from "@iconify/react";
 import starIcon from "@iconify/icons-mdi/star"; // Biểu tượng sao
+import IconHeart from "../icon/IconHeart";
 
 const FunActivitiesCard = ({ activity }) => {
   return (
-    <div className="w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-xl overflow-hidden shadow-lg bg-white">
+    <div className="w-[260px] h-[360px] mt-4 rounded-xl overflow-hidden shadow-lg bg-white">
       {/* Hình ảnh nhà hàng */}
       <div className="relative">
         <img
@@ -12,8 +13,8 @@ const FunActivitiesCard = ({ activity }) => {
           src={activity.imageUrl}
           alt={activity.name}
         />
-        <button className="absolute top-2 right-2 p-2 rounded-full bg-white text-blue-500">
-          <Icon icon="mdi:heart-outline" />
+        <button className="absolute top-2 right-2 p-2 ">
+          <IconHeart/>
         </button>
       </div>
 
@@ -22,7 +23,7 @@ const FunActivitiesCard = ({ activity }) => {
         <h2 className="text-2xl font-bold text-blue-900 mt-1">
           {activity.name}
         </h2>
-        <div className="flex">
+        <div className="flex mt-3">
           <p className="bg-slate-200 w-[62px] h-[22px] text-sm text-slate-600 rounded-md flex justify-center items-center ">
             {activity.best_seller}
           </p>
@@ -30,7 +31,7 @@ const FunActivitiesCard = ({ activity }) => {
             {activity.confirm}
           </p>
         </div>
-        <div className="text-sm flex mt-2">
+        <div className="text-sm flex mt-4">
           <Icon
             icon={starIcon}
             width="18"
@@ -41,7 +42,7 @@ const FunActivitiesCard = ({ activity }) => {
           <p className="text-gray-700 ml-2">({activity.reviews})</p>
           <p className="text-gray-500 ml-2">{activity.nub_booking} lượt đặt</p>
         </div>
-        <div className="text-xl flex justify-between items-center mt-4">
+        <div className="text-xl flex justify-between items-center mt-6">
           <h1 className="text-gray-700 font-bold">{activity.price}/Người</h1>
           <button className="h-[37px] w-[80px] bg-blue-900 text-white rounded-2xl hover:bg-blue-700 text-sm">
             Đặt ngay

@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import PropTypes from 'prop-types';
+import IconHeart from "../icon/IconHeart";
 const HotelCard = ({ hotel }) => {
     return (
         <div className="w-full h-auto mt-5 flex bg-white rounded-lg shadow-md p-4 space-x-4 border border-gray-200 box-border">
@@ -11,9 +12,9 @@ const HotelCard = ({ hotel }) => {
                     className="rounded-lg w-full h-full object-cover"
                 />
                 <div className="absolute top-2 right-2">
-                    <button className="text-white text-4xl">
-                        <Icon icon="mdi:heart-outline" />
-                    </button>
+                <button className="absolute top-2 right-2 p-2 ">
+          <IconHeart/>
+        </button>
                 </div>
             </div>
 

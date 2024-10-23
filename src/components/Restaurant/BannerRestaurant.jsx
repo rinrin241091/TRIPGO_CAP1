@@ -3,7 +3,7 @@ const BannerRestaurant = () => {
   return (
     <div>
       <div
-        className="relative bg-cover bg-center h-[400px] "
+        className="mt-[80px] relative bg-cover bg-center h-[400px] "
         style={{
           backgroundImage: "url('public/pho-thang-1168106 2.png')",
         }}

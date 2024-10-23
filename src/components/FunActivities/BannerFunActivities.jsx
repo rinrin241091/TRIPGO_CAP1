@@ -28,23 +28,22 @@ const BannerFunActivities = () => {
         <div className="absolute inset-0 bg-black bg-opacity-10"></div>
 
         {/* Nội dung */}
-        <div className="relative z-10 flex flex-col text-white mt-[80px] pt-10 ml-[100px]">
-          <h1 className="text-5xl font-bold mt-28 ">Địa điểm vui chơi</h1>
-          <p className="text-lg mt-5">"Khám phá các công viên giải trí, bảo tàng tuyệt vời nhất và nhiều địa điểm không thể bỏ qua khác"</p>
+        <div className="relative z-10 flex flex-col text-white mt-[80px] pt-10 ">
+          <div className="ml-32">
+            <h1 className="text-5xl font-bold mt-28">Địa điểm vui chơi</h1>
+            <p className="text-lg mt-5">"Khám phá các công viên giải trí, bảo tàng tuyệt vời nhất và nhiều địa điểm không thể bỏ qua khác"</p>
+          </div>
+          
+
 
           {/* Địa điểm và Ngày đi */}
-          <div className="absolute mx-4 pt-2 flex space-x-2 w-full  top-[250px] mt-[65px] justify-center">
+          <div className="flex justify-center mt-[65px]">
             <div className="bg-slate-200 w-[1187px] h-[120px] flex justify-center items-center rounded-xl">
               {/* Điểm đến */}
               <div className="flex flex-col mx-2">
-                <div className="text-sm text-slate-600 font-medium">
-                  Điểm đến
-                </div>
+                <div className="text-sm text-slate-600 font-medium">Điểm đến</div>
                 <div className="px-6 bg-white rounded-xl text-customBlue font-medium flex justify-between items-center w-[500px] h-[64px]">
-                  <Icon
-                    icon="mdi:location"
-                    className="w-7 h-7 text-slate-500 "
-                  />
+                  <Icon icon="mdi:location" className="w-7 h-7 text-slate-500" />
                   <select className="px-2 w-full text-black">
                     <option>Chọn điểm đến</option>
                     <option>Đà Nẵng</option>
@@ -56,14 +55,9 @@ const BannerFunActivities = () => {
 
               {/* Chọn ngày */}
               <div className="flex flex-col mx-2">
-                <div className="text-sm text-slate-600 font-medium">
-                  Chọn ngày
-                </div>
+                <div className="text-sm text-slate-600 font-medium">Chọn ngày</div>
                 <div className="px-6 bg-white rounded-xl text-customBlue font-medium flex items-center w-[500px] h-[64px]">
-                  <Icon
-                    icon="mdi:calendar"
-                    className="w-7 h-7 text-slate-500 mr-2"
-                  />
+                  <Icon icon="mdi:calendar" className="w-7 h-7 text-slate-500 mr-2" />
                   <DatePicker
                     selected={checkInDate}
                     onChange={(date) => {

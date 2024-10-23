@@ -17,7 +17,8 @@ const TourPage = () => {
         <FilterSideBarTour />
 
         {/* Main content area: Sorting options and hotel cards */}
-        <div className="flex-1   ml-6">
+        <div className="flex-1   ml-6 w-full">
+          
           <SortBar />
 
           {/* RestautantList */}
