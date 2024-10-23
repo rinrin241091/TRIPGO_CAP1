@@ -168,7 +168,7 @@ const TourList = () => {
     }
   };
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div className="flex flex-wrap  justify-between w-full">
       {currentTour.map((tour, index) => (
         <TourCard key={index} tour={tour} />
       ))}

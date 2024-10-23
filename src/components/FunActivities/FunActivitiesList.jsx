@@ -156,7 +156,7 @@ const FunActivitiesList = () => {
     }
   };
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div className="flex flex-wrap justify-between">
       {currentFunActivities.map((activity, index) => (
         <FunActivitiesCard key={index} activity={activity} />
       ))}
