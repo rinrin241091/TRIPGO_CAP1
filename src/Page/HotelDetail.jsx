@@ -2,6 +2,7 @@ import RoomCard from '../components/Hotels/RoomCard';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 
+
 const HotelDetails = () => {
   const hotel = {
     name: "Khách sạn Alibaba Đà Nẵng",
