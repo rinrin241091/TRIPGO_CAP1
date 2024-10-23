@@ -1,10 +1,10 @@
 import Header from "../layout/Header";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
-import SpecialOffer from "../components/SpecialOffer";
-import TravelSection from "../components/TravelSection";
-import DestinationSuggestions from "../components/DestinationSuggestions ";
-import TestimonialCard from "../components/TestimonialCard";
+import SpecialOffer from "../components/componentPage/SpecialOffer";
+import TravelSection from "../components/componentPage/TravelSection";
+import DestinationSuggestions from "../components/componentPage/DestinationSuggestions ";
+import TestimonialCard from "../components/componentPage/TestimonialCard";
 import Sidebar from "../layout/Sidebar";
 
 const HomePage = () => {
