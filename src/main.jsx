@@ -14,6 +14,7 @@ import TourPage from "./Page/TourPage";
 import FunActivitiesPage from "./Page/FunActivitiesPage";
 import HotelDetails from "./Page/HotelDetail";
 import "../src/index.css";
+import RestantantDetails from "./Page/RestantantDetails";
 
 const Main = () => {
   return (
@@ -26,6 +27,8 @@ const Main = () => {
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/tours" element={<TourPage />} />
         <Route path="/funactivities" element={<FunActivitiesPage />} />
+        <Route path="/restaurantsdetails" element={<RestantantDetails/>} />
+
       </Routes>
     </Router>
   );
