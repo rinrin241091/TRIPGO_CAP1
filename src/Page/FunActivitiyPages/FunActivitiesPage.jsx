@@ -1,10 +1,10 @@
-import SortBar from "../components/common/SortBar";
-import Sub from "../components/common/Sub";
-import BannerFunActivities from "../components/FunActivities/BannerFunActivities";
-import FilterSideBarFunActivities from "../components/FunActivities/FilterSideBarFunActivities";
-import FunActivitiesList from "../components/FunActivities/FunActivitiesList";
-import Footer from "../layout/Footer";
-import Header from "../layout/Header";
+import SortBar from "../../components/common/SortBar";
+import Sub from "../../components/common/Sub";
+import BannerFunActivities from "../../components/FunActivities/BannerFunActivities";
+import FilterSideBarFunActivities from "../../components/FunActivities/FilterSideBarFunActivities";
+import FunActivitiesList from "../../components/FunActivities/FunActivitiesList";
+import Footer from "../../layout/Footer";
+import Header from "../../layout/Header";
 const FunActivitiesPage = () => {
   return (
     <div>

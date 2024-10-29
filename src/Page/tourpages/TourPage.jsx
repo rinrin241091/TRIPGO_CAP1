@@ -1,10 +1,10 @@
-import SortBar from "../components/common/SortBar";
-import Sub from "../components/common/Sub";
-import BannerTour from "../components/Tour/BannerTour";
-import FilterSideBarTour from "../components/Tour/FilterSideBarTuor";
-import TourList from "../components/Tour/TourList";
-import Footer from "../layout/Footer";
-import Header from "../layout/Header";
+import SortBar from "../../components/common/SortBar";
+import Sub from "../../components/common/Sub";
+import BannerTour from "../../components/Tour/BannerTour";
+import FilterSideBarTour from "../../components/Tour/FilterSideBarTuor";
+import TourList from "../../components/Tour/TourList";
+import Footer from "../../layout/Footer";
+import Header from "../../layout/Header";
 
 const TourPage = () => {
   return (

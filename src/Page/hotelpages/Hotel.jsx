@@ -1,10 +1,10 @@
-import Header from "../layout/Header";
-import SearchBar from "../components/Hotels/SearchBar";
-import SortBar from "../components/common/SortBar";
-import FilterSidebar from "../components/Hotels/FilterSidebar";
-import Footer from "../layout/Footer"
-import HotelList from "../components/Hotels/HotelList";
-import SubscribeSection from "../components/common/Sub";
+import Header from "../../layout/Header";
+import SearchBar from "../../components/Hotels/SearchBar";
+import SortBar from "../../components/common/SortBar";
+import FilterSidebar from "../../components/Hotels/FilterSidebar";
+import Footer from "../../layout/Footer"
+import HotelList from "../../components/Hotels/HotelList";
+import SubscribeSection from "../../components/common/Sub";
 const HotelPage = () => {
     return (
         <div className=" bg-[#F8F8F8]">

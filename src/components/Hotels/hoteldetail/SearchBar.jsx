@@ -1,51 +1,41 @@
 import { useState } from 'react';
 import { Icon } from "@iconify/react/dist/iconify.js";
-import DatePicker from 'react-datepicker';  // Để sử dụng DatePicker của react-datepicker
-import 'react-datepicker/dist/react-datepicker.css'; 
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css'; // Import CSS của DatePicker
 
 const SearchBar = () => {
-    const [checkInDate, setCheckInDate] = useState(null);  
-    const [checkOutDate, setCheckOutDate] = useState(null);  
-    const [rooms, setRooms] = useState(1); 
-    const [adults, setAdults] = useState(1);  
-    const [children, setChildren] = useState(0);  
-    const [showDropdown, setShowDropdown] = useState(false);  
-    // Hàm để tính ngày hôm sau cho ngày trả phòng
+    const [checkInDate, setCheckInDate] = useState(null);
+    const [checkOutDate, setCheckOutDate] = useState(null);
+    const [showDropdown, setShowDropdown] = useState(false); // Quản lý dropdown
+    const [rooms, setRooms] = useState(1); // Số phòng
+    const [adults, setAdults] = useState(2); // Số người lớn
+    const [children, setChildren] = useState(0);
+
+    // Hàm để tính ngày hôm sau
     const getNextDay = (date) => {
         const nextDay = new Date(date);
         nextDay.setDate(nextDay.getDate() + 1); // Cộng thêm 1 ngày
         return nextDay;
     };
-
-    // Hàm toggle hiển thị dropdown chọn số lượng phòng
-    const toggleDropdown = () => {
-        setShowDropdown(!showDropdown);
-    };
-
-    // Hàm để tăng/giảm số phòng, người lớn, trẻ em
-    const increment = (setter, value) => setter(value + 1);
-    const decrement = (setter, value) => value > 0 && setter(value - 1);
+        // Hàm toggle hiển thị dropdown chọn số lượng phòng
+        const toggleDropdown = () => {
+            setShowDropdown(!showDropdown);
+        };
+    
+        // Hàm để tăng/giảm số phòng, người lớn, trẻ em
+        const increment = (setter, value) => setter(value + 1);
+        const decrement = (setter, value) => value > 0 && setter(value - 1);
 
     return (
-        <div className="mt-[80px] marker:h-auto w-full flex flex-col justify-center">
-            <div className="bg-cover bg-center h-80 flex items-center" 
-                style={{
-                    backgroundImage: "url('public/img/bannerHotel.jpeg')"
-                }}
-            >    
-                <div className="ml-[10%]">
-                    <div className="text-white text-5xl font-bold">Khách Sạn</div> 
-                    <div className="text-white text-lg font-normal">Chào mừng đến với thiên đường nghỉ dưỡng</div> 
-                </div>
-            </div>
+        <div className="mt-[60px] z-50 fixed mx-auto marker:h-auto w-full  ">
+           
             <div 
-                className="inline-block max-w-fit h-auto mx-auto rounded-xl bg-customBgInput" 
+                className=" max-w-fit  h-28 border border-[#6e6d6d] rounded-xl bg-[#f3f3f3]" 
                 style={{
                     marginTop: "-60px"
                 }}                    
             >           
                 <div className="mx-4 pt-2 flex space-x-2">                       
-                    {/* Điểm đến */}
                     <div className="">
                         <div className="text-sm text-slate-600 font-medium">Điểm đến</div>
                         <div className="w-64 h-16 px-6 bg-white rounded-xl text-customBlue font-medium flex justify-between items-center">
@@ -58,7 +48,7 @@ const SearchBar = () => {
                             </select>
                         </div>
                     </div>   
-
+                    
                     {/* Nhận phòng */}
                     <div className="">
                         <div className="text-sm text-slate-600 font-medium">Nhận phòng</div>
@@ -67,7 +57,7 @@ const SearchBar = () => {
                                 selected={checkInDate}
                                 onChange={(date) => {
                                     setCheckInDate(date);
-                                    // Nếu ngày trả phòng hiện tại nhỏ hơn hoặc bằng ngày nhận phòng, reset lại ngày trả phòng
+                                    // Nếu ngày trả phòng hiện tại thấp hơn ngày nhận phòng, reset lại ngày trả phòng
                                     if (checkOutDate && date >= checkOutDate) {
                                         setCheckOutDate(null);
                                     }
@@ -83,10 +73,10 @@ const SearchBar = () => {
                     {/* Trả phòng */}
                     <div className="">
                         <div className="text-sm text-slate-600 font-medium">Trả phòng</div>
-                        <div className="w-[200px] h-16 px-6 bg-white rounded-xl text-customBlue font-medium flex items-center">
+                        <div className="w-[200px] h-16 px-6 bg-white rounded-xl text-customBlue font-medium flex items-center">                   
                             <DatePicker
                                 selected={checkOutDate}
-                                onChange={(date) => setCheckOutDate(date)}
+                                onChange={setCheckOutDate}
                                 dateFormat="dd/MM/yyyy"
                                 placeholderText="Chọn ngày"
                                 className="w-full px-2"
@@ -95,7 +85,7 @@ const SearchBar = () => {
                             />
                         </div>
                     </div>  
-
+                    
                     {/* Số phòng, số khách */}
                     <div className="relative">
                         <div className="text-sm text-slate-600 font-medium">Số phòng, số khách</div>
@@ -171,7 +161,7 @@ const SearchBar = () => {
                                 </div>
                             </div>
                         )}
-                    </div>  
+                    </div>   
                     
                     <button className="mt-5 w-36 h-16 rounded-xl bg-customBlue text-white font-semibold flex justify-center items-center hover:bg-blue-700 duration-300">
                         Tìm kiếm
